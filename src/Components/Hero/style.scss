@@ -1,0 +1,76 @@
+*{
+    color: white;
+}
+.hero{
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (max-width: 500px){
+        height: 95vh;
+    }
+    #hero-text{
+        font-size:50px;
+        padding: 20px;
+        text-transform: uppercase;
+        @media (max-width: 500px){
+            font-size: 50px;
+            font-weight: 500;
+        }
+    }
+    .details{
+        padding: 20px;
+        font-size: 18px;
+        @media (max-width: 500px){
+            font-size: 20px;
+            span{
+                display: none;
+            }
+        }
+    }
+    .hero-links{
+        a{
+            padding:0 20px;
+            position: relative;
+            transition: .5s;
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 15px;
+                width: 80%;
+                height: 2px;
+                background-color: white;
+                transition: .2s;
+            }
+            &:hover{
+                color: goldenrod;
+            }
+            &:hover::after {
+                background-color: goldenrod;
+            }
+        }
+    }
+
+    .slider{
+        display: flex;
+        justify-content: center;
+        .circle{
+            width: 15px;
+            height: 15px;
+            background-color: transparent;
+            border: 1px solid white;
+            margin: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .active{
+            background-color: white;
+            transition: .5s ease-in;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.subhero{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    @media (max-width: 500px) {
+        height: 80vh;
+    }
+    .container1{
+        padding:20px;
+        display: grid;
+        align-items: center;
+        .title{
+            justify-self: center;
+            text-align: center;
+            width: 100%;
+            @media (max-width: 500px) {
+                margin: 0 0 100px 0;
+                justify-self: start;
+            }
+            h2{
+                font-size: 60px;
+                margin:0;
+                height: 150px;
+                @media (max-width: 680px){
+                    position: absolute;
+                    transform: translate(-10px, -15px);
+                    justify-content: start;
+                    font-size: 50px;
+                }
+            }
+        }
+        .description{
+            p{
+                font-size: 18px;
+                text-shadow: 0px 0px 2px black;
+                span{
+                    @media (max-width: 500px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .ratings{
+            height: 30px;
+        }
+        .viewbtn{
+            div{
+                position: absolute;
+                button{
+                    position: relative;
+                    bottom: 25px;
+                    background-color: goldenrod;
+                    border: none;
+                    padding: 5px 10px;
+                    font-size: 15px;
+                    border-radius: 2px;
+                    box-shadow: 2px 2px 0px white;
+                    cursor: pointer;
+                    transition: .3s linear;
+                    &:hover{
+                        background-color: white;
+                        box-shadow: 4px 4px 0px goldenrod;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

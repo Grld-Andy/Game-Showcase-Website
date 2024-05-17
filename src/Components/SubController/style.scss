@@ -1,0 +1,43 @@
+.row{
+    display: flex;
+    margin: 30px;
+    margin-top: 0;
+    position: relative;
+    bottom: 20px;
+	overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    justify-content: center;
+    @media (max-width: 928px) {
+        justify-content: start;
+    }
+    @media (max-width: 500px) {
+        margin: 0 10px 20px 10px;
+    }
+    &::-webkit-scrollbar{
+        display:none;
+    }
+    .m-card{
+        cursor: pointer;
+        padding: 0;
+        margin: 0 5px;
+        height: 200px;
+        @media (max-width: 500px) {
+            height: calc(120px - 1vh);
+            width: 200px;
+        }
+        img{
+            height: 100%;
+            transition: 1s;
+            @media (max-width: 500px) {
+                width:100%;
+            }
+        }
+    }
+    .active_sub_bg{
+        background-color: yellow;
+    }
+    .active_sub_bg img{
+        transform: scale(.95);
+    }
+}
