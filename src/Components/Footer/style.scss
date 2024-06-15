@@ -4,9 +4,9 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fafafa;
+    background-color: var(--footer-bg);
     font-weight: 400;
     h5{
-        color: black;
+        color: var(--text-color);
     }
 }

@@ -1,8 +1,8 @@
 import './App.css';
 import {useState} from 'react'
 import Hero from './Components/Hero/Hero'
-import MySlider from './Components/MySlider/MySlider'
 import Footer from './Components/Footer/Footer'
+import Theme from './Components/Theme/Theme'
 import CardCollection from './Components/CardCollection/CardCollection';
 import Heading from './Components/Heading/Heading';
 import SubController from './Components/SubController/SubController';
@@ -10,9 +10,9 @@ import SubController from './Components/SubController/SubController';
 function App() {
 
   const [isDarkMode, setIsDarkMode] = useState(true);
-
-  const toogleTheme = () => {
-    setIsDarkMode(!isDarkMode);
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode)
+    console.log(isDarkMode)
   }
 
   return (
@@ -24,6 +24,7 @@ function App() {
         <Heading text='Featured'/>
         <SubController/>
         <Footer/>
+        <Theme toggleTheme={toggleTheme}/>
       </div>
   );
 }

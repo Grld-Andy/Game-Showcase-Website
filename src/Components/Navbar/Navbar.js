@@ -5,18 +5,22 @@ import './style.css'
 const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(false);
 
-    const changeNavbar = () => {
-        setShowNavbar(!showNavbar);
+    const changeNavbar = (val) => {
+        setShowNavbar(val);
     }
 
 return (
     <header>
+        {
+            showNavbar&&
+            <div className='overlay' onClick={() => {changeNavbar(false)}}></div>
+        }
         <h1>GAA<span>Games</span></h1>
-        <div onClick={changeNavbar}>
+        <div onClick={() => {changeNavbar(true)}}>
             <FaBars id='nav_button'/>
         </div>
         <div className={`right ${(showNavbar) ? 'showNav' : ''}`}>
-            <FaWindowClose id='nav_button2'  onClick={changeNavbar}/>
+            <FaWindowClose id='nav_button2'  onClick={() => {changeNavbar(false)}}/>
             <div>
                 <div className='top'>
                     <div className='auth'>

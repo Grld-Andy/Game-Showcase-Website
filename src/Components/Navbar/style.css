@@ -9,30 +9,27 @@ header {
   position: sticky;
   padding: 0 70px;
 }
-
+header .overlay {
+  display: none;
+}
 header #nav_button, header #nav_button2 {
   display: none;
 }
-
 header p {
   font-weight: lighter;
 }
-
 header span {
   color: yellow;
 }
-
 header .right {
   display: grid;
   grid-template-rows: 2, 1fr;
   font-size: 10px;
 }
-
 header .right .top .auth {
   margin: 10px 0;
   text-align: right;
 }
-
 header .right .top .auth #social {
   color: gold;
   height: 25px;
@@ -41,49 +38,41 @@ header .right .top .auth #social {
   position: relative;
   top: 8px;
   padding: 0 5px;
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
 }
-
 header .right .top .auth #social:hover {
   background-color: gold;
 }
-
 header .right .top .auth p {
   display: none;
 }
-
 header .right .top .auth #space {
   display: inline;
   margin: 0 2.5px;
 }
-
 header .right .top .auth #login {
   background-color: gold;
   border-radius: 20px 0 0 20px;
   padding: 5px 10px;
-  border-right: solid #d8b90c 1px;
+  border-right: solid rgb(216, 185, 12) 1px;
 }
-
 header .right .top .auth #signup {
   background-color: gold;
   border-radius: 0 20px 20px 0;
   padding: 5px 10px;
 }
-
 header .right .links {
   font-size: 14px;
 }
-
 header .right .links a {
   position: relative;
   padding: 5px;
-  transition: .5s;
+  transition: 0.5s;
   background-color: transparent;
   z-index: 20;
 }
-
 header .right .links a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 3px;
   left: 0;
@@ -93,20 +82,26 @@ header .right .links a::after {
   transform: scaleX(0);
   transition: transform 0.2s ease-in-out;
 }
-
 header .right .links a:hover::after {
   transform: scaleX(1);
   z-index: -5;
 }
-
 header .right .links .active {
   color: gold;
 }
-
 @media (max-width: 720px) {
   header {
-    z-index: 100;
+    z-index: 50;
     position: relative;
+  }
+  header .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    display: block;
   }
   header #nav_button, header #nav_button2 {
     display: block;
@@ -122,10 +117,10 @@ header .right .links .active {
     flex-direction: column;
     position: fixed;
     right: -380px;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
     top: 0;
     width: 50vw;
-    background-color: #2e2e2e;
+    background-color: rgb(46, 46, 46);
     height: 100vh;
     box-shadow: -3px 0 5px black;
   }
@@ -142,6 +137,7 @@ header .right .links .active {
     position: left;
     display: grid;
     grid-template-columns: 1fr;
+    width: -moz-max-content;
     width: max-content;
     text-align: left;
     grid-template-rows: repeat(3, 1fr);
@@ -209,4 +205,4 @@ header .right .links .active {
   header .showNav {
     right: 0;
   }
-}
+}/*# sourceMappingURL=style.css.map */
