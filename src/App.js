@@ -9,14 +9,14 @@ import SubController from './Components/SubController/SubController';
 
 function App() {
 
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('game-theme') === 'dark' ? 'dark' : 'light');
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode)
-    console.log(isDarkMode)
+    localStorage.setItem('game-theme', isDarkMode === 'light' ? 'dark': 'light')
+    setIsDarkMode(isDarkMode === 'light' ? 'dark': 'light')
   }
 
   return (
-      <div className={isDarkMode ? 'dark' : 'light' }>
+      <div className={isDarkMode}>
         <Hero/>
         {/* <MySlider/> */}
         <Heading text='Top Downloads'/>
